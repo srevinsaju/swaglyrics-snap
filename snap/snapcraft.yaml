@@ -12,20 +12,17 @@ architectures:
 - build-on: amd64
 
 apps:
-  guiscrcpy:
+  swaglyrics:
     command: bin/swaglyrics
     environment: 
       PATH: $SNAP/lib:$SNAP/usr/lib:$SNAP/bin:$SNAP/usr/bin:$SNAP/usr/local/bin:$PATH
-    command-chain: &command-chain-common
-    - bin/swaglyrics
-    desktop: share/applications/swaglyrics.desktop
 
 parts:
   swaglyrics:
     plugin: python
     python-version: python3
-    source: https://github.com/srevinsaju/Swaglyrics-for-Spotify/archive/dev-ss.zip
+    source: https://github.com/srevinsaju/Swaglyrics-for-Spotify/archive/dev-ss.tar.gz
 
 plugs:
-  - home
-  - process-control  
+  home:
+  process-control:
