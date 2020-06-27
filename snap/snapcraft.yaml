@@ -16,6 +16,9 @@ apps:
     command: bin/swaglyrics
     environment: 
       PATH: $SNAP/lib:$SNAP/usr/lib:$SNAP/bin:$SNAP/usr/bin:$SNAP/usr/local/bin:$PATH
+    slots:
+      - session-dbus-spotify
+      - session-dbus-freedesktop
 
 parts:
   swaglyrics:
@@ -33,3 +36,14 @@ plugs:
   network:
   network-bind:
   mpris:
+
+slots:
+  session-dbus-spotify:
+    interface: dbus
+    name: org.mpris.MediaPlayer2.spotify
+    bus: session
+  session-dbus-freedesktop:
+    interface: dbus
+    name: org.freedesktop.DBus.Properties
+    bus: session
+
