@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=2.0.alpha1
+Name=swaglyrics
+GenericName=swaglyrics
+Comment=Get lyrics of currently playing Spotify song
+Exec=swaglyrics -c
+Icon=${SNAP}/meta/gui/swaglyrics.png
+Type=Application
+Categories=Audio;
+StartupWMClass=UGENE

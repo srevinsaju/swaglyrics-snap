@@ -1,0 +1,31 @@
+name: swaglyrics
+version: 2.0.alpha1
+summary: Get lyrics of currently playing Spotify song 
+description: |
+  SwagLyrics contains a set of packages and libraries written in Python to dramatically enhance the music listening experience on desktop. The support libraries and utilities have also been made open source to allow for an extensible framework.
+grade: stable 
+confinement: strict 
+
+base: core18
+
+architectures:
+- build-on: amd64
+
+apps:
+  guiscrcpy:
+    command: bin/swaglyrics
+    environment: 
+      PATH: $SNAP/lib:$SNAP/usr/lib:$SNAP/bin:$SNAP/usr/bin:$SNAP/usr/local/bin:$PATH
+    command-chain: &command-chain-common
+    - bin/swaglyrics
+    desktop: share/applications/swaglyrics.desktop
+
+parts:
+  swaglyrics:
+    plugin: python
+    python-version: python3
+    source: https://github.com/srevinsaju/Swaglyrics-for-Spotify/archive/dev-ss.zip
+
+plugs:
+  - home
+  - process-control  
