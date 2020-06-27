@@ -22,6 +22,8 @@ parts:
     plugin: python
     python-version: python3
     source: https://github.com/srevinsaju/Swaglyrics-for-Spotify/archive/dev-ss.tar.gz
+    python-packages:
+      - https://github.com/SwagLyrics/swspotify/archive/master.zip
 
 plugs:
   home:
